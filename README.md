@@ -13,3 +13,5 @@ Order of the application
 # Request Flow
 ![image](https://github.com/ifsemail9/k8s/assets/133851700/5b7293f8-b572-41c4-86dc-bc723d011269)
 
+# Access Service in another Name space
+![image](https://github.com/ifsemail9/k8s/assets/133851700/0e2627ed-476d-49fd-b89c-99345e26524d)
