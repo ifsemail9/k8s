@@ -9,3 +9,6 @@ Order of the application
 
 # Get External IP from the Minicube
 ![image](https://github.com/ifsemail9/k8s/assets/133851700/f448eeef-be18-4718-b1e3-36c71433f2d0)
+
+# Request Flow
+![image](https://github.com/ifsemail9/k8s/assets/133851700/dd5227ce-32e8-4b6c-913d-ae3d30636371)
