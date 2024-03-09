@@ -1,6 +1,7 @@
 ######
 kubectl delete pod rss-site
 
+
 events
 --------
 kubectl get events -n <namespace> --sort-
@@ -24,11 +25,13 @@ K8s
 ====
 kubectl version
 kubectl get all 
+kubectl cluster info
+
+kubectl get all -n my-namespace
 
 NODE
 ====
 kubectl get nodes   -  Node status
-
 
 POD
 ===
@@ -60,13 +63,22 @@ kubectl describe deployment
 kubectl delete deployment mydeploy
 kubectl edit deployment [Deployment-name] - Edit deployment
 
-
 Secrets
 =========
 kubectl get secrets
 
+configmap
+=========
+kubectl get configmap -n default
+kubectl get configmap -o wide/yaml - Get the more info of config map like name space
 
 Apply config file
 ===================
 kubectl apply -f config.yaml
 kubectl delete -f config.yaml
+
+NameSpaces
+=============
+kubectl get namespace
+kubectl create namespace my-namespace
+kubectl api-resources --namespaced=true/false
