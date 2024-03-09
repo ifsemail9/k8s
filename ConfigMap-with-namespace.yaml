@@ -6,3 +6,5 @@ metadata:
   namespace: myname-space #-------- Specify the name space here
 data:
   database_url: mongodb-service
+  #database_url: mongodb-service.database
+  #---------- database_url: mongodb-service.[Name space name which mongodb-service in] ---------------
