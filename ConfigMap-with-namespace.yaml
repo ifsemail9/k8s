@@ -1,3 +1,4 @@
+# -------- Default name space is ' 'default'
 apiVersion: v1
 kind: ConfigMap
 metadata:
