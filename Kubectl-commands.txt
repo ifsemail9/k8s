@@ -1,5 +1,7 @@
-######
+##################################################################
 kubectl delete pod rss-site
+
+kubectl get pods --all-namespaces -o json
 
 
 events
@@ -14,7 +16,17 @@ kubectl logs <pod name> -n <namespace> --all-containers
 kubectl logs <pod name> -n <namespace> -c mycontainer
 kubectl logs <pod name> -n <namespace> --tail 50
 
-###########
+Show all logs from pod nginx written in the last hour
+kubectl logs --since=1h nginx
+
+Return snapshot logs from pod nginx with multi containers
+kubectl logs nginx --all-containers=true
+
+Return snapshot logs from all containers in pods defined by label app=nginx
+kubectl logs -l app=nginx --all-containers=true
+
+##################################################################
+
 
 MiniKube
 ==========
@@ -26,12 +38,15 @@ K8s
 kubectl version
 kubectl get all 
 kubectl cluster info
+kubectl delete deployment/pod/service/secret/configmap name
 
+kubectl get all -n default
 kubectl get all -n my-namespace
 
 NODE
 ====
 kubectl get nodes   -  Node status
+kubectl get nodes -o wide
 
 POD
 ===
@@ -65,20 +80,35 @@ kubectl edit deployment [Deployment-name] - Edit deployment
 
 Secrets
 =========
-kubectl get secrets
+kubectl delete secret mongodb-secret
 
 configmap
 =========
 kubectl get configmap -n default
 kubectl get configmap -o wide/yaml - Get the more info of config map like name space
+kubectl delete configmap mongodb-configmap
 
 Apply config file
 ===================
 kubectl apply -f config.yaml
+
 kubectl delete -f config.yaml
+kubectl delete -f mongo-db.yaml
+kubectl delete -f mongo-express.yaml
+kubectl delete -f mongodb-configmap.yaml
+kubectl delete -f mongo-internal-service.yaml
+kubectl delete -f mongo-secret.yaml
+kubectl delete -f mogo-express-external-service.yaml
 
 NameSpaces
 =============
 kubectl get namespace
 kubectl create namespace my-namespace
 kubectl api-resources --namespaced=true/false
+
+troubleshhoting
+================
+
+kubectl get pods
+kubectl describe pod mongo-express-859f75dd4f-w46dr
+kubectl logs  mongo-express-859f75dd4f-w46dr
