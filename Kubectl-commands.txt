@@ -1,8 +1,7 @@
-##################################################################
+#######################################################
 kubectl delete pod rss-site
 
 kubectl get pods --all-namespaces -o json
-
 
 events
 --------
@@ -25,8 +24,7 @@ kubectl logs nginx --all-containers=true
 Return snapshot logs from all containers in pods defined by label app=nginx
 kubectl logs -l app=nginx --all-containers=true
 
-##################################################################
-
+#######################################################
 
 MiniKube
 ==========
@@ -58,8 +56,11 @@ kubectl get pods -l app=myapp-deployment
 kubectl get pods - - Check PODs names
 kubectl get pods -o wide - Check PODs IP addresses
 kubectl describe pod  [pod name]
-kubectl exec -it  [pod name] /bin/bash - SSH to POD
+
 kubectl logs [POD-NAME] - check logs
+
+kubectl exec -it  [pod name] /bin/bash - SSH to POD
+kubectl exec -it mongo-express-859f75dd4f-zcpl2 -- /bin/bash
 
 Service
 =======
