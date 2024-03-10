@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: mongodb-configmap
 data:
-  database_url: mongodb-service
+  database_url: mongodb-internal-service #This name should equilant to mongo-internal-service.yaml name
