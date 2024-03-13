@@ -40,4 +40,9 @@ Order of the application
  
 # Updating a local repository with changes from a GitHub repository
 - _either:_    git pull origin master
-- _or:_   git pull origin main  
+- _or:_   git pull origin main
+
+# Working with 'Nmae Spaces'
+- First need to create the name space
+- CMD - kubectl get secret -n ns-apd
+- Then execute the 'kubectl apply' with config yaml files
