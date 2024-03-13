@@ -46,3 +46,5 @@ Order of the application
 - First need to create the name space
 - CMD - kubectl get secret -n ns-apd
 - Then execute the 'kubectl apply' with config yaml files
+- kubectl get all -n ns-apd
+- kubectl get service/secret -n ns-apd
