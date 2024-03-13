@@ -49,7 +49,8 @@ K8s
 kubectl version
 kubectl get all 
 kubectl cluster info
-kubectl delete deployment/pod/service/secret/configmap name
+
+kubectl delete - kubectl delete [deployment/pod/service/secret/configmap] <name>
 
 kubectl get all -n default
 kubectl get all -n my-namespace
@@ -102,8 +103,8 @@ kubectl get configmap -n default
 kubectl get configmap -o wide/yaml - Get the more info of config map like name space
 kubectl delete configmap mongodb-configmap
 
-Apply config file
-===================
+Apply/Delete config files
+==========================
 kubectl apply -f config.yaml
 
 kubectl delete -f config.yaml
