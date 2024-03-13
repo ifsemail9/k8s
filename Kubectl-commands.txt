@@ -50,7 +50,7 @@ kubectl version
 kubectl get all 
 kubectl cluster info
 
-kubectl delete - kubectl delete [deployment/pod/service/secret/configmap] <name>
+kubectl delete - kubectl delete [deployment/pod/service/secret/configmap/replicaset] <name>
 
 kubectl get all -n default
 kubectl get all -n my-namespace
@@ -129,6 +129,11 @@ NameSpaces
 kubectl get namespace
 kubectl create namespace my-namespace
 kubectl api-resources --namespaced=true/false
+
+Describe
+==========
+kubectl describe pod <pod-name>
+kubectl describe [deployment/pod/service/secret/configmap/replicaset] <pod-name>
 
 troubleshhoting
 ================
