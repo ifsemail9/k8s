@@ -109,6 +109,13 @@ Apply/Delete config files
 ==========================
 kubectl apply -f config.yaml
 
+kubectl apply -f mongo-secret.yaml
+kubectl apply -f mongo-db.yaml
+kubectl apply -f mongo-internal-service.yaml
+kubectl apply -f mongodb-configmap.yaml
+kubectl apply -f mongo-express.yaml
+kubectl apply -f mogo-express-external-service.yaml
+
 kubectl delete -f config.yaml
 kubectl delete -f mongo-db.yaml
 kubectl delete -f mongo-express.yaml
