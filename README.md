@@ -24,11 +24,11 @@ Order of the application
 5. Click "Generate new token."
 
 # Working with GIT Repo
-git config --global user.email "ifsemail9@gmail.com"
-git config --global user.name "ifsemail9@gmail.com"
-git status
-git add --all
-git commit -m 'Added bash scripts and updated secret yaml'
-git remote add origin git@github.com:ifsemail9/k8s.git
-git push -u -f origin main
+1. git config --global user.email "ifsemail9@gmail.com"
+2. git config --global user.name "ifsemail9@gmail.com"
+3. git status
+4. git add --all
+5. git commit -m 'Added bash scripts and updated secret yaml'
+6. git remote add origin git@github.com:ifsemail9/k8s.git
+7. git push -u -f origin main
  
