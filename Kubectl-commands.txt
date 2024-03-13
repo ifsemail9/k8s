@@ -95,10 +95,12 @@ kubectl edit deployment [Deployment-name] - Edit deployment
 
 Secrets
 =========
+kubectl get secret
 kubectl delete secret mongodb-secret
 
 configmap
 =========
+kubectl get configmap
 kubectl get configmap -n default
 kubectl get configmap -o wide/yaml - Get the more info of config map like name space
 kubectl delete configmap mongodb-configmap
