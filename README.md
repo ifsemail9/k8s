@@ -36,6 +36,7 @@ Order of the application
 5. git commit -m 'Added bash scripts and updated secret yaml'
 6. git remote add origin git@github.com:ifsemail9/k8s.git
 7. git push -u -f origin main
+8. git log - Give the history of all the commits with commit hashes
  
 # Updating a local repository with changes from a GitHub repository
 - _either:_    git pull origin master
