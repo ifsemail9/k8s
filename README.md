@@ -33,5 +33,5 @@ Order of the application
 7. git push -u -f origin main
  
 # Updating a local repository with changes from a GitHub repository
-- _ _either: _ _    git pull origin master
-- _ _or: _ _   git pull origin main  
+- _either:_    git pull origin master
+- _or:_   git pull origin main  
