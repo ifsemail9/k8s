@@ -10,5 +10,6 @@ kubectl apply -f mongo-express.yaml
 sleep 5
 kubectl apply -f mogo-express-external-service.yaml
 sleep 5
-kubectl get all
-
+kubectl get all -n ns-apd
+kubectl get secret -n ns-apd
+kubectl get config map -n ns-apd

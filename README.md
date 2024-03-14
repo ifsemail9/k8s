@@ -42,7 +42,7 @@ Order of the application
 - _either:_    git pull origin master
 - _or:_   git pull origin main
 
-# Working with 'Nmae Spaces'
+# Working with 'Name-Spaces'
 - First need to create the name space
 - CMD - kubectl get secret -n ns-apd
 - Then execute the 'kubectl apply' with config yaml files
