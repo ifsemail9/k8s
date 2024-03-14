@@ -1,6 +1,9 @@
 #######################################################
 kubectl delete pod rss-site
 
+kubectl run --replicas=1000 my-web-server
+kubectl scale --replicas=1000 my-web-server
+
 kubectl get pods --all-namespaces -o json
 
 events
