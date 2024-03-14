@@ -51,3 +51,12 @@ Order of the application
 - Then execute the 'kubectl apply' with config yaml files
 - kubectl get all -n ns-apd
 - kubectl get service/secret/pod -n ns-apd
+
+# Working with 'kubectl api-resources'
+![image](https://github.com/ifsemail9/k8s/assets/133851700/0aaf2eb0-effd-42f6-a035-bd1bb1e29642)
+- CMDs:
+- kubectl api-resources
+- kubectl api-resources --namespaced=true
+- kubectl api-resources --namespaced=false
+
+
