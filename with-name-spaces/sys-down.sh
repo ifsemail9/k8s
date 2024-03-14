@@ -6,4 +6,4 @@ kubectl delete -f mongo-secret.yaml
 kubectl delete -f mogo-express-external-service.yaml
 kubectl get all -n ns-apd
 kubectl get secret -n ns-apd
-kubectl get config map -n ns-apd
+kubectl get configmap -n ns-apd
