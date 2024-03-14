@@ -128,7 +128,9 @@ NameSpaces
 =============
 kubectl get namespace
 kubectl create namespace my-namespace
-kubectl api-resources --namespaced=true/false
+kubectl api-resources --namespaced=true/false  > Apply name space while executing the cmdline apply
+
+kubectl apply -f mongo-express.yaml --namespace=ns-apd
 
 Describe
 ==========
