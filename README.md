@@ -15,6 +15,9 @@ Order of the application
 # Get External IP from the Minicube
 ![image](https://github.com/ifsemail9/k8s/assets/133851700/f448eeef-be18-4718-b1e3-36c71433f2d0)
 
+# Get External IP from the Minicube [With NAME SPACE]
+ minikube service -n ns-apd mongo-express-external-service
+
 # Request Flow
 ![image](https://github.com/ifsemail9/k8s/assets/133851700/5b7293f8-b572-41c4-86dc-bc723d011269)
 
