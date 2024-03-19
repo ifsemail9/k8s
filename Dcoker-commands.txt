@@ -10,6 +10,7 @@ Docker Project
 $ docker build -t my-image .
 $ docker run -dit --name my-running-app -p 8080:80 my-apache2
 $ docker exec -it 5ac7830317b6 bash
+$ docker logs romantic_goldwasser
 
 
 
