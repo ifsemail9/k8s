@@ -7,3 +7,9 @@ docker run -d -p 80:80 --name my-apache-php-app -v "$PWD":/var/www/html php:7.2-
 
 $ docker build -t my-apache2 .
 $ docker run -dit --name my-running-app -p 8080:80 my-apache2
+
+
+
+#Check here for more infp
+# https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+# https://docs.docker.com/reference/dockerfile/#env
