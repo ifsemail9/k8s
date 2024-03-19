@@ -8,6 +8,21 @@ To remove all the stopped containers at once, run the command: docker rm $(docke
 
 **********************************************************************
 
+**************************** Mumshad *********************************
+
+  minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus=1
+
+  kubectl create -f pod.yaml 
+  kubectl get pods
+  kubectl describe pod
+
+  # Apply chnage in the Configuration files
+  kubectl replace -f pod.yaml
+
+
+
+
+**********************************************************************
 
 
 
@@ -123,7 +138,12 @@ kubectl delete configmap mongodb-configmap
 
 Apply/Delete config files
 ==========================
+# Create and Apply Both Same
+kubectl create -f config.yaml
 kubectl apply -f config.yaml
+
+# Apply chnage in the Configuration files
+kubectl replace -f pod.yaml
 
 kubectl apply -f mongo-secret.yaml
 kubectl apply -f mongo-db.yaml
