@@ -5,8 +5,11 @@ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/sr
 
 docker run -d -p 80:80 --name my-apache-php-app -v "$PWD":/var/www/html php:7.2-apache
 
-$ docker build -t my-apache2 .
+Docker Project
+--------------
+$ docker build -t my-image .
 $ docker run -dit --name my-running-app -p 8080:80 my-apache2
+$ docker exec -it 5ac7830317b6 bash
 
 
 
