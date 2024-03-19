@@ -24,6 +24,13 @@ Publish image
 $ docker tag my-image a11_aruna/my-image
 $ docker image push a11aruna/my-image
 
+Docker tag
+------------
+docker image tag myimage registry-host:5000/myname/myimage:latest
+docker image tag myimage registry-host:5000/myname/myimage:v1.0.1
+docker image tag myimage registry-host:5000/myname/myimage:v1.0
+docker image tag myimage registry-host:5000/myname/myimage:v1
+
 #Check here for more infp
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 # https://docs.docker.com/reference/dockerfile/#env
