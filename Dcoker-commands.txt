@@ -12,7 +12,11 @@ $ docker run -dit --name my-running-app -p 8080:80 my-apache2
 $ docker exec -it 5ac7830317b6 bash
 $ docker logs romantic_goldwasser
 
-
+$ docker images
+$ docker rmi my-image
+$ docker ps
+$ docker ps -a
+$ docker rm <container-id>
 
 #Check here for more infp
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
