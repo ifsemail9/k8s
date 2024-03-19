@@ -8,7 +8,7 @@ docker run -d -p 80:80 --name my-apache-php-app -v "$PWD":/var/www/html php:7.2-
 Docker Project
 --------------
 $ docker build -t my-image .
-$ docker run -dit --rm --name my-app -p 80:8080 my-image
+$ docker run -dit --rm --name my-app -p 8080:80 my-image <8080[host]:80[container]>
 $ docker exec -it 5ac7830317b6 bash
 $ docker logs romantic_goldwasser
 
