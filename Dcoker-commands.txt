@@ -18,6 +18,12 @@ $ docker ps
 $ docker ps -a
 $ docker rm <container-id>
 
+Publish image
+--------------
+#Rename docker image
+$ docker tag my-image a11_aruna/my-image
+$ docker image push a11aruna/my-image
+
 #Check here for more infp
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 # https://docs.docker.com/reference/dockerfile/#env
