@@ -1,11 +1,11 @@
-## Kubernates Learning
+# Kubernates Learning
 
-# Minikube start
+## Minikube start
 1. minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus=1
 2. minikube status
 3. minikube stop
 
-# Order of the application
+## Order of the application
 1. Secrets
 2. Mongo DB
 3. Internal Service
