@@ -17,9 +17,9 @@ To remove all the stopped containers at once, run the command: docker rm $(docke
   kubectl describe pod
 
   # Apply chnage in the Configuration files
-  kubectl replace -f pod.yaml
+  kubectl replace -f <replicaset-config-file-name>
 
-
+  kubectl scale -replicaset=6 -f <replicaset-config-file-name>
 
 
 **********************************************************************
@@ -115,6 +115,7 @@ kubectl describe services [services name] - check end point IPs/get POD Details
 Replica set
 ===============
 kubectl get replicaset
+kubectl delete replicaset <replicaset-name>
 
 Deployment
 ===================
