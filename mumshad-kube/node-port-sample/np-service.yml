@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  type: NodePort
+  ports: 
+    - targetPort: 80 #httpd container port
+      port: 80 #port which service opens
+      nodePort: 30008
+  selector:
+    use: apd
