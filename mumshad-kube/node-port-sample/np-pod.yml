@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: npapp-pod
+  labels:
+    app: npapp
+    type: front-end
+    use: apd
+spec:
+  containers:
+    - name: httpd-container
+      image: httpd
