@@ -31,6 +31,12 @@ docker image tag myimage registry-host:5000/myname/myimage:v1.0.1
 docker image tag myimage registry-host:5000/myname/myimage:v1.0
 docker image tag myimage registry-host:5000/myname/myimage:v1
 
+Create image using container
+----------------------------
+docker container commit c16378f943fe rhel-httpd:latest
+docker image tag rhel-httpd:latest registry-host:5000/myadmin/rhel-httpd:latest
+
+docker image push registry-host:5000/myadmin/rhel-httpd:latest
 #Check here for more infp
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 # https://docs.docker.com/reference/dockerfile/#env
