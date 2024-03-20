@@ -75,6 +75,37 @@ services:
     ports:
       - 8080:8080
 
+PHPMYADMIN
+-----------
+Usage with arbitrary server
+docker run --name phpmyadmin -d -e PMA_ARBITRARY=1 -p 8080:80 phpmyadmin
+
+Composer samples
+-------------------
+version: '3.1'
+
+services:
+  db:
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: notSecureChangeMe
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+
+
+
+
+
+
+
+
 docker image push registry-host:5000/myadmin/rhel-httpd:latest
 #Check here for more infp
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
