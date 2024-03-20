@@ -157,7 +157,7 @@ services:
       - "3306:3306"  
 
 https://thriveread.com/run-docker-php-ext-install-mysqli/
-
+https://github.com/docker-library/mysql/issues/275
 
 
 
