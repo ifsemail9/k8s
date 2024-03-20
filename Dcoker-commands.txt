@@ -1,3 +1,13 @@
+**************************** Docker *********************************
+
+To stop all the stopped containers at once - docker stop $(docker ps -aq)
+
+To remove all the stopped containers at once, run the command: docker rm $(docker ps -aq)
+
+
+**********************************************************************
+
+
 $ docker build -t my-php-app .
 $ docker run -it --rm --name my-running-app my-php-app
 
