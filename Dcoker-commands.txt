@@ -1,4 +1,14 @@
 **************************** Docker *********************************
+Important -
+
+--link option
+-------------
+The --link option in Docker is a legacy feature that allows you to link one container to another. Although it may eventually be removed,
+When you create a link between containers using --link, Docker does the following:
+Creates an entry in the /etc/hosts file of the target container (the one being linked to).
+Sets environment variables in the target container to provide information about the linked container.
+For example, if you link a container named web to a database container named db using --link db:webdb, Docker creates an environment variable WEBDB_NAME=/web/webdb in the web container
+
 
 To stop all the stopped containers at once - docker stop $(docker ps -aq)
 
