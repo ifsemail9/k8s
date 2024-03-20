@@ -34,7 +34,7 @@ $ docker inspect 7cae09aa0bdb
 
 Project Docker runs
 --------------------
-docker run -itd --rm --name db --env MARIADB_ROOT_PASSWORD=pass  mariadb:latest
+docker run -itd --rm --name db --env MARIADB_ROOT_PASSWORD=pass --env MARIADB_USER=test --env MARIADB_PASSWORD=test --env MARIADB_DATABASE=testdb mariadb:latest
 docker run -itd --rm --name my-app -p 8080:80 --link db a11aruna/php-httpd:latest
 docker run -itd --rm --name phpmyadmin -d -e PMA_ARBITRARY=1 --link db -p 8081:80 phpmyadmin
 
