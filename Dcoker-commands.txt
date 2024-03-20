@@ -38,6 +38,43 @@ Create image using container
 docker container commit c16378f943fe rhel-httpd:latest
 docker image tag rhel-httpd:latest registry-host:5000/myadmin/rhel-httpd:latest
 
+Mariadb
+--------
+# Starting using a minimal configuration
+$ docker run --detach --name some-mariadb --env MARIADB_ROOT_PASSWORD=my-secret-pw  mariadb:latest
+or
+$ docker run --detach --name some-mariadb --env MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1  mariadb:latest
+or
+$ docker run --detach --name some-mariadb --env MARIADB_RANDOM_ROOT_PASSWORD=1  mariadb:latest
+
+# Starting a MariaDB instance with a user, password, and a database:
+$ docker run --detach --name some-mariadb --env MARIADB_USER=example-user --env MARIADB_PASSWORD=my_cool_secret --env MARIADB_DATABASE=exmple-database --env MARIADB_ROOT_PASSWORD=my-secret-pw  mariadb:latest
+
+# Start a mariadb server instance in a network
+# As applications talk to MariaDB, MariaDB needs to start in the same network as the application:
+$ docker network create some-network 
+$ docker run --detach --network some-network --name some-mariadb --env MARIADB_USER=example-user --env MARIADB_PASSWORD=my_cool_secret --env MARIADB_ROOT_PASSWORD=my-secret-pw  mariadb:latest
+$ docker run --detach --network some-network --name some-application --env APP_DB_HOST=some-mariadb  --env APP_DB_USER=example-user --env APP_DB_PASSWD=my_cool_secret some-application
+
+Composer samples
+-------------------
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
 docker image push registry-host:5000/myadmin/rhel-httpd:latest
 #Check here for more infp
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
