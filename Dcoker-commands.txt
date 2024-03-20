@@ -21,7 +21,7 @@ $ docker rm <container-id>
 Publish image
 --------------
 #Rename docker image
-$ docker tag my-image a11_aruna/my-image
+$ docker tag my-image a11aruna/my-image
 $ docker login -u a11aruna
 $ docker image push a11aruna/my-image
 $ docker logout
