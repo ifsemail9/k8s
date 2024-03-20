@@ -1,6 +1,7 @@
 **************************** Docker *********************************
 Important -
 
+1 -
 --link option
 -------------
 The --link option in Docker is a legacy feature that allows you to link one container to another. Although it may eventually be removed,
@@ -9,9 +10,12 @@ Creates an entry in the /etc/hosts file of the target container (the one being l
 Sets environment variables in the target container to provide information about the linked container.
 For example, if you link a container named web to a database container named db using --link db:webdb, Docker creates an environment variable WEBDB_NAME=/web/webdb in the web container
 
+Instead of using --link, consider using user-defined networks for communication between containers.
 
+2 -
+Stop all/Remove all
+-------------------
 To stop all the stopped containers at once - docker stop $(docker ps -aq)
-
 To remove all the stopped containers at once, run the command: docker rm $(docker ps -aq)
 
 
