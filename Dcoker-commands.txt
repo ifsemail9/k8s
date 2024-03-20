@@ -156,7 +156,7 @@ services:
     ports:
       - "3306:3306"  
 
-
+https://thriveread.com/run-docker-php-ext-install-mysqli/
 
 
 
