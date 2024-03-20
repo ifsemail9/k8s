@@ -1,4 +1,5 @@
 <?php
+# 'root' user is blocked from accessing the db from other server other than DB server.
 $servername = "db";
 $username = "test";
 $password = "test";
