@@ -120,7 +120,41 @@ services:
     environment:
       - PMA_ARBITRARY=1
 
+Composersample
+---------------
+version: "3.9"
+services:
+  # PHP Container
+  php-container:
+    container_name: php-container
+    # Dockerfile path
+    build:
+      context: .
+      dockerfile: mysql.dockerfile  
+    volumes:
+      # container working directory
+      - ./test:/var/www/html  
+    ports:
+      # Expose PHP on 5000
+      - 5000:80  
+    depends_on:
+      # Make sure the db-container starts before php-container
+      - db-container  
 
+  # Database Container
+  db-container:
+    image: mysql:latest  
+    environment:
+      # Add MySQL root password
+      MYSQL_ROOT_PASSWORD: root_pass  
+      # Username password
+      MYSQL_PASSWORD: user_password  
+      # Test Database
+      MYSQL_DATABASE: sample_db  
+      # Database username
+      MYSQL_USER: sample_db_user  
+    ports:
+      - "3306:3306"  
 
 
 
