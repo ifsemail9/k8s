@@ -1,13 +1,3 @@
-**************************** Docker *********************************
-
-To stop all the stopped containers at once - docker stop $(docker ps -aq)
-
-To remove all the stopped containers at once, run the command: docker rm $(docker ps -aq)
-
-
-
-**********************************************************************
-
 **************************** Mumshad *********************************
 
   minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus=1
