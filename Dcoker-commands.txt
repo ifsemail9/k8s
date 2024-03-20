@@ -65,6 +65,7 @@ $ docker run --detach --name some-mariadb --env MARIADB_ROOT_PASSWORD=my-secret-
 or
 $ docker run --detach --name some-mariadb --env MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1  mariadb:latest
 or
+# where the container logs will contain the generated root password.
 $ docker run --detach --name some-mariadb --env MARIADB_RANDOM_ROOT_PASSWORD=1  mariadb:latest
 
 # Starting a MariaDB instance with a user, password, and a database:
