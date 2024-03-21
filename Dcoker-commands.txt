@@ -51,6 +51,7 @@ $ docker build -t my-image .    OR    [ $ docker build -t a11aruna/php-httpd . ]
 $ docker run -dit --rm --name my-app -p 8080:80 my-image <8080[host]:80[container]>
 $ docker exec -it 5ac7830317b6 bash
 $ docker logs romantic_goldwasser
+$ docker run -w /path/to/dir/ -i -t ubuntu pwd
 
 $ docker images
 $ docker rmi my-image
