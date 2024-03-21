@@ -35,6 +35,19 @@ docker run -d -p 80:80 --name my-apache-php-app -v "$PWD":/var/www/html php:7.2-
 Docker Project
 --------------
 $ docker build -t my-image .    OR    [ $ docker build -t a11aruna/php-httpd . ]
+ # NOTE -
+  1 -
+  Using the --no-cache Option During Build: When building a Docker image, you can use the --no-cache option to ignore the cache and build the image from scratch. 
+  This ensures that no cached layers are used during the build process. For example:
+
+  docker build --no-cache -t my-image .
+
+  2 -
+  Clearing the Docker Build Cache: To clear the entire Docker build cache, you can use the docker system prune command. This will remove all unused data, 
+  including cached layers. Be cautious when using this command, especially in a CI environment, as it might affect performance:
+
+  docker system prune
+
 $ docker run -dit --rm --name my-app -p 8080:80 my-image <8080[host]:80[container]>
 $ docker exec -it 5ac7830317b6 bash
 $ docker logs romantic_goldwasser
