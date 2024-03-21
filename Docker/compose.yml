@@ -1,1 +1,15 @@
+services:
+  
+  frontend:
+    image: 
+    ports:
+    networks:
 
+  backend:
+    image:
+    networks:
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {}
+  back-tier: {}
