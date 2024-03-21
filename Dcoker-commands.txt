@@ -1,3 +1,17 @@
+**************************** Docker Compose File *********************************
+The Compose file
+----------------
+The default path for a Compose file is "compose.yaml" (preferred) or "compose.yml" that is placed in the working directory. 
+Compose also supports "docker-compose.yaml" and "docker-compose.yml" for backwards compatibility of earlier versions. 
+If both files exist, Compose prefers the canonical "compose.yaml".
+
+
+
+
+**********************************************************************************
+
+
+
 **************************** Docker *********************************
 Important -
 
@@ -186,6 +200,8 @@ services:
 
 https://thriveread.com/run-docker-php-ext-install-mysqli/
 https://github.com/docker-library/mysql/issues/275
+https://docs.docker.com/reference/cli/docker/container/run/
+https://github.com/docker/awesome-compose/blob/master/nginx-aspnet-mysql/compose.yaml
 
 
 
