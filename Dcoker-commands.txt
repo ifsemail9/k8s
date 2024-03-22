@@ -66,6 +66,19 @@ COPY somefile.txt ./
 RUN cat /somefile.txt
 EOF
 
+3.
+Connecting multiple container replicas to a single container without port conflicts
+
+In order to create multiple replicas of the same service running on different ports but exposing the same one, specify a range of port numbers like in the following "docker-compose.yml" example:
+
+services:
+  node-app:
+...
+    ports:
+      - 6379-6381:5432
+    deploy:
+      replicas: 3
+
 **********************************************************************************
 
 
