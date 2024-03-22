@@ -1,15 +1,15 @@
+version: '3.0'
 services:
-  
-  frontend:
-    image: 
+  webapp:
+    image: a11aruna/php-httpd
+    restart: always
     ports:
+      - 8080:80
     networks:
-
-  backend:
-    image:
-    networks:
-
-networks:
+      - front-tier
+    
+  
+  networks:
   # The presence of these objects is sufficient to define them
   front-tier: {}
   back-tier: {}
