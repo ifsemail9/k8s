@@ -16,6 +16,9 @@ docker-compose up -d - run in the background as a daemon
 docker-compose stop - o safely stop the active services, we can use stop, which will preserve containers, volumes, and networks, along with every modification made to them:
 docker-compose down - To reset the status of our project, we can simply run down, which will destroy everything with the exception of external volumes:
 
+docker-compose ps
+docker-compose ps -a
+
 
 Important Notes
 -----------------
@@ -82,7 +85,50 @@ services:
 **********************************************************************************
 
 
+******************************* HA-Proxy Project ************************************
+Build image with 'no-cache'
+docker build --no-cache -t haproxy-lb:latest -f Dockerfile-haproxy .
 
+Build image with 'no-cache' - Docker-compose
+docker-compose build --no-cache
+
+Help - HA Proxy
+----------------
+Get container IP
+docker inspect --format '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-name>
+
+Check HA-Proxy Config file
+$ docker run -it --rm --name haproxy-syntax-check haproxy-lb haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
+
+Start HA-Proxy
+$ docker run -d --name my-running-haproxy -v /path/to/etc/haproxy:/usr/local/etc/haproxy:ro --sysctl net.ipv4.ip_unprivileged_port_start=0 haproxy:2.3
+
+Practicles
+---------
+docker volume ls
+docker network ls
+
+docker network rm mynetwork
+docker volume rm myvol
+
+docker network create --subnet=172.25.0.0/16 mynetwork
+
+docker run -itd --rm -p 8091:80 --net mynetwork --ip 172.25.0.11 a11aruna/build-php-httpd
+docker run -itd --rm -p 8090:80 --net mynetwork --ip 172.25.0.10 a11aruna/build-php-httpd
+docker run -d --rm --name my-running-haproxy --net mynetwork -v /root/docker/docker-compose-demo:/usr/local/etc/haproxy:ro --sysctl net.ipv4.ip_unprivileged_port_start=0 -p 80:80 haproxy
+
+docker run -d --rm --name my-running-haproxy --net mynetwork -v /root/docker/docker-compose-demo:/usr/local/etc/haproxy:ro --sysctl net.ipv4.ip_unprivileged_port_start=0 -p 80:80 haproxy:1.7
+
+docker logs my-running-haproxy -f
+
+docker inspect amazing_easley | grep -A 200 "Networks"
+docker inspect my-running-haproxy | grep -A 200 "Networks"
+
+docker exec -it a11aruna/build-php-httpd cat /etc/hosts
+docker exec -it 5ad9ff03945b cat /etc/hosts
+
+
+*************************************************************************************
 
 
 
