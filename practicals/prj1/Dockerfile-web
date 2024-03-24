@@ -1,0 +1,13 @@
+FROM php:apache
+LABEL author="Aruna" description="A comprehensive docker image to run php:apache"
+EXPOSE 80
+WORKDIR /var/www/html
+
+# Install wget
+RUN apt-get update && apt-get install -y wget
+
+# Install your extensions to connect to MySQL and add mysqli
+RUN docker-php-ext-install mysqli
+
+# copy index file to WORKDIR
+COPY  index.php /var/www/html

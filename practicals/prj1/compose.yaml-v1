@@ -1,0 +1,56 @@
+
+version: '3.0'
+services:
+  webapp:
+    image: a11aruna/build-php-httpd
+    deploy:
+      mode: replicated
+      replicas: 3
+    build:
+      dockerfile: Dockerfile-web
+      context: .
+    restart: always
+    ports:
+      #- 8080:80
+      - 8090-8092:80 # Multiple port for 3 container replicas / Resolve port conflict
+    depends_on:
+      - db
+    networks:
+      - front-tier
+  db:
+    image: mariadb
+    restart:
+      on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MARIADB_USER: test
+      MARIADB_PASSWORD: test
+      MARIADB_DATABASE: testdb
+    networks:
+      - front-tier
+
+  phpadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    environment:
+      PMA_ARBITRARY: 1
+    networks:
+      - front-tier
+
+  haproxy:
+    image: haproxy-lb
+    build:
+      dockerfile: Dockerfile-haproxy
+      context: .
+    ports:
+      - 80:80
+    networks:
+      - front-tier
+    
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {}

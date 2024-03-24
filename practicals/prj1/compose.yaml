@@ -1,0 +1,73 @@
+version: '3.0'
+services:
+
+  webapp0:
+    image: a11aruna/build-php-httpd
+    build:
+      dockerfile: Dockerfile-web
+      context: .
+    restart: always
+    ports:
+      #- 8080:80
+      - 8090:80 # Multiple port for 3 container replicas / Resolve port conflict
+    depends_on:
+      - db
+    networks:
+      front-tier:
+        ipv4_address: 172.25.0.10
+
+  webapp1:
+    image: a11aruna/build-php-httpd
+    restart: always
+    ports:
+      #- 8080:80
+      - 8091:80 # Multiple port for 3 container replicas / Resolve port conflict
+    depends_on:
+      - db
+    networks:
+      front-tier:
+        ipv4_address: 172.25.0.11
+
+  webapp2:
+    image: a11aruna/build-php-httpd
+    restart: always
+    ports:
+      #- 8080:80
+      - 8092:80 # Multiple port for 3 container replicas / Resolve port conflict
+    depends_on:
+      - db
+    networks:
+      front-tier:
+        ipv4_address: 172.25.0.12
+
+  db:
+    image: mariadb
+    restart:
+      on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MARIADB_USER: test
+      MARIADB_PASSWORD: test
+      MARIADB_DATABASE: testdb
+    networks:
+      - front-tier
+
+  haproxy:
+    image: haproxy-lb
+    build:
+      dockerfile: Dockerfile-haproxy
+      context: .
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    networks:
+      - front-tier
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
