@@ -41,6 +41,7 @@
 6. git remote add origin git@github.com:ifsemail9/k8s.git
 7. git push -u -f origin main
 8. git log - Give the history of all the commits with commit hashes
+9. git pull origin - Update the local PC Copy
  
 # Updating a local repository with changes from a GitHub repository
 - _either:_    git pull origin master
