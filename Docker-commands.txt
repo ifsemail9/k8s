@@ -82,6 +82,23 @@ services:
     deploy:
       replicas: 3
 
+
+
+
+
+
+
+
+$docker network create --driver=bridge apd-network
+$docker build --rm --no-cache -t haproxy 
+$docker run --privileged --network apd-network --name haproxy -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -d  haproxy
+
+
+docker network rm $(docker network ls -q)
+
+
+
+
 **********************************************************************************
 
 
