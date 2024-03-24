@@ -61,8 +61,12 @@ services:
       - 80:80
     depends_on:
       - db
+      - webapp1
+      - webapp2
     networks:
       - front-tier
+    volumes:
+      - ./:/usr/local/etc/haproxy
 
 networks:
   # The presence of these objects is sufficient to define them
@@ -71,3 +75,4 @@ networks:
     ipam:
       config:
         - subnet: 172.25.0.0/16
+

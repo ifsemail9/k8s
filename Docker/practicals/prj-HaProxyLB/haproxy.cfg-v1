@@ -31,6 +31,5 @@ backend httpd-backend
     balance roundrobin
     server httpd1 172.25.0.10:80 check
     server httpd2 172.25.0.11:80 check
-    server httpd3 172.25.0.12:80 check
     # Add more servers if needed
 
