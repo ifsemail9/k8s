@@ -1,3 +1,17 @@
+**************************** Docker Repositories *********************************
+docker login -u a11aruna
+docker images
+docker push a11aruna/phphttpd-hostname
+
+
+Prepare an Existing Image
+=========================
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+**********************************************************************************
+
+
+
 **************************** Docker Compose File *********************************
 The Compose file
 ----------------
