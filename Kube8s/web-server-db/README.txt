@@ -24,3 +24,5 @@ spec:
 
 kubectl delete -f phpadmin-npservice-deploy.yml
 kubectl delete -f db-deploy.yml
+
+sed 's/db/db-internal-service/' db-connect.php
