@@ -1,3 +1,22 @@
+**************************** My Practicles *********************************
+
+1. Delete and Recreate:
+
+This approach involves deleting the existing pod and letting Kubernetes automatically create a new one based on your deployment configuration.
+
+Here's how to do it:
+
+Identify the pod name using kubectl get pods.
+Delete the pod using kubectl delete pod <pod-name>.
+
+2.
+kubectl exec -it phpmyadmin -n default -- bash
+
+**********************************************************************
+
+
+
+
 **************************** Mumshad *********************************
 
   minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus=1

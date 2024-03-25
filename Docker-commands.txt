@@ -113,6 +113,13 @@ docker network rm $(docker network ls -q)
 
 
 
+sed 's/db/db-internal-service/' db-connect.php
+
+docker-compose restart
+
+docker restart <container_id>
+
+
 **********************************************************************************
 
 
