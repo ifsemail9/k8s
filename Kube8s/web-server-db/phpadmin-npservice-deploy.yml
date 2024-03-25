@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-phpmyadmin-deployment
+  labels:
+    app: app-phpmyadmin
+    type: db-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-phpmyadmin
+  template:
+
+    metadata:
+      name: phpmyadmin
+      labels:
+        app: app-phpmyadmin
+        type: db-client
+        use: system-db-client
+    spec:  # This was missing in the original YAML
+      containers:
+        - name: phpmyadmin-server
+          image: phpmyadmin
+          ports:
+            - containerPort: 80
+          env:
+            - name: PMA_ARBITRARY
+              value: "1"  # This should be a tsring value
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-np-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80 #httpd container port
+      port: 8080 #port which service opens
+      nodePort: 30007
+  selector:
+    app: app-phpmyadmin
