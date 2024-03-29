@@ -1,0 +1,49 @@
+# Worker Node Data path - 
+# /var/lib/docker/volumes/minikube/_data/data/
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deploy
+  labels:
+    app: app
+    type: front-end
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      use: apd
+  template: # Down here POD section starting
+    metadata:
+      name: app-pod
+      labels:
+        app: app
+        type: front-end
+        use: apd
+    spec:  # This was missing in the original YAML
+      volumes:
+        - name: share-hostpath
+          hostPath:
+            path: /var/data
+            type: Directory
+      containers:
+        - name: httpd-container
+          image: a11aruna/phphttpd-hostname
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: share-hostpath
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80 #httpd container port
+      port: 80 #port which service opens
+      nodePort: 30008
+  selector:
+    use: apd

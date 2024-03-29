@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-db-deployment
+  labels:
+    app: myapp-db
+    type: back-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp-db
+  template:
+
+    metadata:
+      name: app-db
+      labels:
+        app: myapp-db
+        type: database
+        use: system-db
+    spec:  # This was missing in the original YAML
+      containers:
+        - name: db-server
+          image: mariadb
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MARIADB_USER
+              value: test
+            - name: MARIADB_PASSWORD
+              value: test
+            - name: MARIADB_ROOT_PASSWORD
+              value: roottest
+            - name: MARIADB_DATABASE
+              value: testdb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-internal-service
+spec:
+  selector:
+    app: myapp-db
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306

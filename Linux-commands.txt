@@ -1,0 +1,16 @@
+CURL command with BASH FOR
+--------------------------
+for i in {1..10}; do
+    curl -X GET https://example.com/api/data
+done
+
+# With new line
+---------------
+for i in {1..10}; do
+    echo -e "\nRequest $i:"
+    curl -X GET https://example.com/api/data
+done
+
+CURL Command with 'new line' in single line
+------------------------------------------
+for i in {1..1000}; do echo "\nRequest $i:"; curl -X GET http:///192.168.49.2:30008; done
