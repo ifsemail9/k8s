@@ -12,6 +12,9 @@ Delete the pod using kubectl delete pod <pod-name>.
 2.
 kubectl exec -it phpmyadmin -n default -- bash
 
+3.
+kubectl get nodes
+
 **********************************************************************
 
 
