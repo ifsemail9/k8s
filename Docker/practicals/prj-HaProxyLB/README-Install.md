@@ -8,10 +8,10 @@ docker network create --subnet=172.25.0.0/16 mynetwork​
 
 ​Starting the WEB Servers​
 =======================
-WEB1:
-docker run -itd --rm -p 8091:80 --net mynetwork --ip 172.25.0.11 a11aruna/build-php-httpd ​
-WEB2:
-docker run -itd --rm -p 8090:80 --net mynetwork --ip 172.25.0.10 a11aruna/build-php-httpd​
+WEB1:<br />
+docker run -itd --rm -p 8091:80 --net mynetwork --ip 172.25.0.11 a11aruna/build-php-httpd ​<br />
+WEB2:<br />
+docker run -itd --rm -p 8090:80 --net mynetwork --ip 172.25.0.10 a11aruna/build-php-httpd​<br />
 
 ​Create the Config file​
 ======================
