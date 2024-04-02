@@ -27,10 +27,10 @@ docker logs my-running-haproxy –f​
 
 Check the IPs​
 ============
-docker inspect amazing_easley | grep -A 200 "Networks"​
+docker inspect amazing_easley | grep -A 200 "Networks"​<br />
 docker inspect my-running-haproxy | grep -A 200 "Networks"​
 
 ​Run command inside the containers​
 =================================
-docker exec -it a11aruna/build-php-httpd cat /etc/hosts​
+docker exec -it a11aruna/build-php-httpd cat /etc/hosts​<br />
 docker exec -it 5ad9ff03945b cat /etc/hosts
