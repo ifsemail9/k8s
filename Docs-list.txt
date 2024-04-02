@@ -1,3 +1,1 @@
-Config Docker LB
-----------------
-https://ifs-my.sharepoint.com/:p:/r/personal/aruna_dharmathilaka_ifs_com/_layouts/15/Doc.aspx?sourcedoc=%7BFEF20C5F-31A0-477C-90C5-E02951D27FDC%7D&file=Docker-HaProxyLB.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1&login_hint=aruna.dharmathilaka%40ifs.com&ct=1712061475925&wdOrigin=OFFICECOM-WEB.MAIN.EDGEWORTH&cid=b372fade-e9f0-48f6-b4a3-d404182cd0c5&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=acdb810e-64ce-47dc-9e40-81416f57e9aa
+Config Docker LB - 'Learning' DIR
