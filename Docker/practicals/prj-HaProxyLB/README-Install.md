@@ -1,7 +1,7 @@
 Delete the OLD Network​
 ========================
 docker network rm mynetwork​
-​
+
 Create Network​
 =============
 docker network create --subnet=172.25.0.0/16 mynetwork​
