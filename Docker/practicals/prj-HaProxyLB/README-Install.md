@@ -34,3 +34,10 @@ docker inspect my-running-haproxy | grep -A 200 "Networks"​
 =================================
 docker exec -it a11aruna/build-php-httpd cat /etc/hosts​<br />
 docker exec -it 5ad9ff03945b cat /etc/hosts
+
+Testing of the Load Balncer
+====================================
+![image](https://github.com/ifsemail9/k8s/assets/133851700/070eee3b-03eb-416d-9d07-6e6375f1a0c9)
+
+
+
