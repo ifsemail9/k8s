@@ -14,3 +14,29 @@ done
 CURL Command with 'new line' in single line
 ------------------------------------------
 for i in {1..1000}; do echo "\nRequest $i:"; curl -X GET http:///192.168.49.2:30008; done
+
+How to Enable SSH Root Login on Ubuntu
+--------------------------------------
+Step 1: Login as a sudo user
+    ssh [sudo_user]@[server_ip_address]
+
+Step 2: Modify the SSH Configuration
+    sudo nano /etc/ssh/sshd_config
+
+Step 3: Search for the line that reads:
+    PermitRootLogin prohibit-password
+
+Step 4: Change it to:
+    PermitRootLogin yes
+
+Step 5: Restart the SSH Service
+    restart the SSH service:
+        sudo systemctl restart sshd
+
+Step 6: Password reset for ROOT User
+    $ passwd root
+    $ Enter new password
+
+Step 7: Test the Root Login
+    From another machine, try logging in as the root user:
+        ssh root@your_server_ip
